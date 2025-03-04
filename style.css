@@ -1,0 +1,179 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+  font-size: 1.125rem;
+  background-color: hsl(27, 66%, 92%);
+}
+main {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 8rem auto 2rem auto;
+}
+main .balance-container {
+  background-color: hsl(10, 79%, 65%);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 2rem;
+  max-width: 650px;
+  width: 100%;
+  border-radius: 25px;
+  margin-bottom: 1.5rem;
+}
+@media (max-width: 670px) {
+  main .balance-container {
+    width: 90%;
+  }
+}
+main .balance-container div span {
+  color: hsl(33, 100%, 98%);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+main .balance-container div h1 {
+  font-size: 2.5rem;
+  color: hsl(33, 100%, 98%);
+  font-weight: 700;
+}
+main .bars {
+  background-color: hsl(33, 100%, 98%);
+  padding: 2rem;
+  max-width: 650px;
+  width: 100%;
+  border-radius: 25px;
+}
+@media (max-width: 670px) {
+  main .bars {
+    width: 90%;
+  }
+}
+main .bars h1 {
+  font-weight: 700;
+  font-size: 2.1rem;
+  margin-bottom: 2.5rem;
+  color: hsl(25, 47%, 15%);
+}
+@media (max-width: 425px) {
+  main .bars h1 {
+    font-size: 1.7rem;
+  }
+}
+main .bars .chart {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  height: 150px;
+  margin-bottom: 5rem;
+  position: relative;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+@media (max-width: 330px) {
+  main .bars .chart {
+    margin-bottom: 12rem;
+  }
+}
+main .bars .chart .bar-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main .bars .chart .bar {
+  width: 3.8rem;
+  border-radius: 5px;
+  position: relative;
+  cursor: pointer;
+  background-color: hsl(10, 79%, 65%);
+  transition: all 0.3s ease-in-out;
+}
+@media (max-width: 580px) {
+  main .bars .chart .bar {
+    width: 2.8rem;
+  }
+}
+@media (max-width: 470px) {
+  main .bars .chart .bar {
+    width: 2rem;
+  }
+}
+main .bars .chart .bar .tooltip {
+  position: absolute;
+  bottom: 110%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.5rem;
+  background-color: hsl(25, 47%, 15%);
+  color: hsl(33, 100%, 98%);
+  border-radius: 5px;
+  font-size: 0.9rem;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  white-space: nowrap;
+}
+main .bars .chart .bar:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+main .bars .chart .bar:hover {
+  opacity: 0.7;
+}
+main .bars .chart .wed {
+  background-color: hsl(186, 34%, 60%) !important;
+}
+main .bars .chart .day {
+  margin-top: 8px;
+  color: hsl(28, 10%, 53%);
+  text-align: center;
+}
+main .bars hr {
+  border: 1px solid hsl(27, 66%, 92%);
+}
+main .bars .summary {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+main .bars .summary div span {
+  display: block;
+  color: hsl(28, 10%, 53%);
+}
+main .bars .summary div .title {
+  font-size: 2.9rem;
+}
+@media (max-width: 425px) {
+  main .bars .summary div .title {
+    font-size: 2rem;
+  }
+}
+main .bars .summary .last-month-revenue {
+  display: flex;
+  /* Use flexbox */
+  flex-direction: column;
+  justify-content: center;
+  /* Center vertically */
+  text-align: end;
+}
+main .bars .summary .last-month-revenue .revenue {
+  color: hsl(25, 47%, 15%);
+  font-weight: 700;
+}
+footer {
+  font-size: 1rem;
+  color: hsl(10, 79%, 65%);
+  text-align: center;
+}
+footer a,
+footer a:visited {
+  text-decoration: none;
+  font-weight: 700;
+  font-style: italic;
+  color: hsl(25, 47%, 15%);
+}

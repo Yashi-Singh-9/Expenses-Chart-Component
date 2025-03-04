@@ -1,0 +1,204 @@
+@soft-red: hsl(10, 79%, 65%);
+@cyan: hsl(186, 34%, 60%);
+@dark-brown: hsl(25, 47%, 15%);
+@medium-brown: hsl(28, 10%, 53%);
+@cream: hsl(27, 66%, 92%);
+@very-pale-orange: hsl(33, 100%, 98%);
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    font-size: 1.125rem;
+    background-color: @cream;
+}
+
+main{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 8rem auto 2rem auto;
+
+    .balance-container{
+        background-color: @soft-red;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        padding: 2rem;
+        max-width: 650px;
+        width: 100%;
+        border-radius: 25px;
+        margin-bottom: 1.5rem;
+
+        @media (max-width: 670px) {
+            width: 90%;
+        }
+
+        div{
+            span{
+                color: @very-pale-orange;
+                display: block;
+                margin-bottom: 0.5rem;
+            }
+
+            h1{
+                font-size: 2.5rem;
+                color: @very-pale-orange;
+                font-weight: 700;
+            }
+        }
+    }
+
+    .bars{
+        background-color: @very-pale-orange;
+        padding: 2rem;
+        max-width: 650px;
+        width: 100%;
+        border-radius: 25px;
+
+        @media (max-width: 670px) {
+            width: 90%;
+        }
+
+        h1{
+            font-weight: 700;
+            font-size: 2.1rem;
+            margin-bottom: 2.5rem;
+            color: @dark-brown;
+
+            @media (max-width: 425px) {
+                font-size: 1.7rem;
+            }
+        }
+
+        .chart{
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            height: 150px;
+            margin-bottom: 5rem;
+            position: relative;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+
+            @media (max-width: 330px) {
+                margin-bottom: 12rem;
+            }
+
+            .bar-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .bar {
+                width: 3.8rem;
+                border-radius: 5px;
+                position: relative;
+                cursor: pointer;
+                background-color: @soft-red; 
+                transition: all 0.3s ease-in-out;
+
+                @media (max-width: 580px) {
+                    width: 2.8rem;
+                }
+
+                @media (max-width: 470px) {
+                    width: 2rem;
+                }
+
+                .tooltip {
+                    position: absolute;
+                    bottom: 110%; // Position above the bar
+                    left: 50%;
+                    transform: translateX(-50%);
+                    padding: 0.5rem;
+                    background-color: @dark-brown;
+                    color: @very-pale-orange;
+                    border-radius: 5px;
+                    font-size: 0.9rem;
+                    visibility: hidden; // Initially hidden
+                    opacity: 0;
+                    transition: opacity 0.3s ease-in-out;
+                    white-space: nowrap;
+                }
+
+                &:hover .tooltip {
+                    visibility: visible;
+                    opacity: 1;
+                }
+
+                &:hover {
+                    opacity: 0.7;
+                }
+            }
+
+            .wed{
+                background-color: @cyan !important;
+            }
+
+            .day {
+                margin-top: 8px;
+                color: @medium-brown;
+                text-align: center;
+            }
+        }
+
+        hr{
+            border: 1px solid @cream;
+        }
+
+        .summary{
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+
+            div{
+                span{
+                    display: block;
+                    color: @medium-brown;
+                }
+
+                .title{
+                    font-size: 2.9rem;
+
+                    @media (max-width: 425px) {
+                        font-size: 2rem;
+                    }
+                }
+            }
+
+            .last-month-revenue{
+                display: flex; /* Use flexbox */
+                flex-direction: column; 
+                justify-content: center; /* Center vertically */
+                text-align: end;
+                
+                .revenue{
+                    color: @dark-brown;
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+}
+
+footer{
+    font-size: 1rem;
+    color: @soft-red;
+    text-align: center;
+
+    a,
+    a:visited{
+        text-decoration: none;
+        font-weight: 700;
+        font-style: italic;
+        color: @dark-brown;
+    }
+}
