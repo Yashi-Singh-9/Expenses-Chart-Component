@@ -40,7 +40,7 @@ Users should be able to:
 
 ### Links  
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)  
+- Solution URL: [Add solution URL here](https://www.frontendmentor.io/solutions/expenses-chart-component-V601e9FgJ7)  
 - Live Site URL: [Live Site](https://yashi-singh-9.github.io/Expenses-Chart-Component/)  
 
 ## My Process  
